@@ -5,6 +5,7 @@
 ### DC-GAN
 
 [Medium Article](https://medium.com/using-deep-learning-dc-gan-to-add-featured-effect/recently-i-started-the-creative-applications-of-deep-learning-with-googles-tensorflow-of-parag-k-14453b215d2b)
+
 [Source Code](https://github.com/Kjeanclaude/CADL-I-FinalPoject)
 
 Notes: 
@@ -14,7 +15,9 @@ This GAN allows for adding and modifying features on an individuals face, but al
 ### Transparent Latent GAN
 
 [Medium Article](https://medium.com/p/d170b1b59255)
+
 [Project Demo on Kaggle (broken)](https://www.kaggle.com/summitkwan/tl-gan-demo)
+
 [Source Code](https://github.com/SummitKwan/transparent_latent_gan)
 
 Notes: 
@@ -23,7 +26,9 @@ This network does a good job at producing realistic images, but currently only s
 ### Face Attribute Manipulation using GANs
 
 [Towards Data Science Article](https://towardsdatascience.com/face-attribute-manipulation-using-gans-9fae92e9f1c3)
+
 [Paper](https://arxiv.org/pdf/1612.05363.pdf)
+
 [Source Code](https://github.com/MingtaoGuo/Learning-Residual-Images-for-Face-Attribute-Manipulation)
 
 
