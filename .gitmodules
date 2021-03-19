@@ -1,0 +1,3 @@
+[submodule "examples/ganspace"]
+	path = examples/ganspace
+	url = git@github.com:NathanDuPont/ganspace.git
