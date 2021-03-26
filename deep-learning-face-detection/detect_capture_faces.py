@@ -7,13 +7,13 @@ import imutils
 import cv2
 import os
 
-ap = argparse.ArgumentParser()
-ap.add_argument("-v", "--video", required=True,
-                help="path to input video file")
-args = vars(ap.parse_args())
+# ap = argparse.ArgumentParser()
+# ap.add_argument("-v", "--video", required=True,
+#                 help="path to input video file")
+# args = vars(ap.parse_args())
 
 faces = []
-video_file_name = args['video']
+video_file_name = 'swing.mp4'
 confidence_threshold = 0.5
 model = cv2.dnn.readNetFromCaffe('model/deploy.prototxt.txt', "model/opencv_face_detector.caffemodel")
 file_name_no_ext = video_file_name.split('.')[0]
@@ -22,6 +22,7 @@ if not os.path.exists(face_directory):
     os.makedirs(face_directory)
 
 video_stream = FileVideoStream(video_file_name).start()
+
 
 while True:
     # grab the frame from the threaded video stream and resize it
@@ -53,13 +54,19 @@ while True:
         sizes = ((detections[0:num_detections, 5] - detections[0:num_detections, 3])
                  + (detections[0:num_detections, 6] - detections[0:num_detections, 4]))
 
+        # print(detections[0:num_detections, 5])
+        # print(detections[0:num_detections, 3])
+        # print(detections[0:num_detections, 6])
+        # print(detections[0:num_detections, 4])
+        # print()
+
         # get the largest box
         ordered_sizes = -sizes.argsort()
-        box = detections[ordered_sizes[0], 3:7] * np.array([w, h, w, h])
-        (startX, startY, endX, endY) = box.astype("int")
 
-        # add the face to a list of faces to be written
-        faces.append(frame[startY:endY, startX:endX])
+        if sizes[ordered_sizes[0]] > .5:
+            box = detections[ordered_sizes[0], 3:7] * np.array([w, h, w, h])
+            (startX, startY, endX, endY) = box.astype("int")
+            faces.append(frame[startY:endY, startX:endX])
 
     # show the output frame
     cv2.imshow("Frame", frame)
