@@ -33,6 +33,8 @@ Once the installation is complete, go back to the [GANSpace Readme](https://gith
 python interactive.py --model=StyleGAN2 --class=ffhq --layer=style --use_w -n=1_000_000 -b=10_000
 ```
 
+**NOTE:** Make sure you're in the `ganspace` folder when executing the command above or it will not run.
+
 
 ---
 
