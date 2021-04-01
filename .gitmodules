@@ -4,3 +4,6 @@
 [submodule "examples/stylegan2-local"]
 	path = examples/stylegan2-local
 	url = git@github.com:NathanDuPont/stylegan2.git
+[submodule "examples/cyclegan"]
+	path = examples/cyclegan
+	url = git@github.com:NathanDuPont/pytorch-CycleGAN-and-pix2pix.git
