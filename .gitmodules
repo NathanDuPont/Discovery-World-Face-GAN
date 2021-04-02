@@ -1,9 +1,9 @@
 [submodule "examples/ganspace"]
 	path = examples/ganspace
-	url = git@github.com:NathanDuPont/ganspace.git
+	url = https://github.com/NathanDuPont/ganspace.git
 [submodule "examples/stylegan2-local"]
 	path = examples/stylegan2-local
-	url = git@github.com:NathanDuPont/stylegan2.git
+	url = https://github.com/NathanDuPont/stylegan2.git
 [submodule "examples/cyclegan"]
 	path = examples/cyclegan
-	url = git@github.com:NathanDuPont/pytorch-CycleGAN-and-pix2pix.git
+	url = https://github.com/NathanDuPont/pytorch-CycleGAN-and-pix2pix.git
