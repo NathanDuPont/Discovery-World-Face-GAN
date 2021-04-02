@@ -3,7 +3,7 @@
 ### Cloning the submodules
 
 When cloning the repository, you will need to run the following command to set up the repositories:
-
+may need to first run the following line if one ROSIE `git submodule sync`
 `git submodule update --init --recursive`
 
 This will add in the submodules, and link them to our repository. The submodule is just a link from our repository to another repository, which allows for us to easily use their code within our project. 
