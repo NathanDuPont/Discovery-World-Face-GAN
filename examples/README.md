@@ -36,6 +36,54 @@ python interactive.py --model=StyleGAN2 --class=ffhq --layer=style --use_w -n=1_
 **NOTE:** Make sure you're in the `ganspace` folder when executing the command above or it will not run.
 
 
+### Setting up CycleGAN
+
+Assuming you haven't pulled down the submodule yet, go into the `Discovery-World-Face-Gan` folder in bash (or any other git client), either by navigating to the directory, or opening the folder, right clicking, and selecting "Git Bash Here" if the option is available.
+
+Run the following command to ensure the submodule is cloned:
+
+`cd ./examples/cyclegan; git submodule update --init --recursive;`
+
+**NOTE:** If running on linux (or in Windows bash), replace the `;` with `&&` to make all commands run
+
+To get packages set up, open Anaconda prompt (or a prompt with access to the `conda` command) and change directories (cd) into the `Discovery-World-Face-Gan/examples/cyclegan` folder.
+
+Now, run the following command to get packages installed:
+
+`conda env create -f environment.yml`
+
+This should create an Anaconda environment named `cyclegan` with the required packages. Run `conda activate cyclegan` to enter the new environment.
+
+**Downloading datasets for style transfer**
+
+Run the following commands *individually* to download the models and datasets for several common models:
+
+```
+bash ./scripts/download_cyclegan_model.sh style_monet
+bash ./scripts/download_cyclegan_model.sh style_cezanne
+bash ./scripts/download_cyclegan_model.sh style_ukiyoe
+bash ./scripts/download_cyclegan_model.sh style_vangogh
+
+bash ./datasets/download_cyclegan_dataset.sh style_monet
+bash ./datasets/download_cyclegan_dataset.sh style_cezanne
+bash ./datasets/download_cyclegan_dataset.sh style_ukiyoe
+bash ./datasets/download_cyclegan_dataset.sh style_vangogh
+```
+
+Once downloaded, you should have everything to start testing the model.
+
+**Populating images for testing**
+
+The test script will transform any images in the `cyclegan/imgs` folder and produce outputs in the `cyclegan/results` folder (in a specific sub-folder for the test you run). Create the `imgs` folder and paste in any images you want to transform.
+
+**Testing Style Transfer**
+
+Using CycleGAN, you can test style transfer through running `python test.py --no-dropout`. This will run the *default* model, which is a monet style transform. Use the following parameter to change the model output:
+
+`--name [style_monet_pretrained | style_cezanne_pretrained | style_ukiyoe_pretrained | style_vangogh_pretrained]`
+
+Use one of the values in the brackets to specify which pretrained transform you want to run. Add this before the `--no-dropout` flag and run the same command to test a new transform.
+
 ---
 
 ## Examples of GAN Facial Augmentation
