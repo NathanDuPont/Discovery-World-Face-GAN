@@ -78,11 +78,11 @@ The test script will transform any images in the `cyclegan/imgs` folder and prod
 
 **Testing Style Transfer**
 
-Using CycleGAN, you can test style transfer through running `python test.py --no-dropout`. This will run the *default* model, which is a monet style transform. Use the following parameter to change the model output:
+Using CycleGAN, you can test style transfer through running `python test.py --no_dropout`. This will run the *default* model, which is a monet style transform. Use the following parameter to change the model output:
 
 `--name [style_monet_pretrained | style_cezanne_pretrained | style_ukiyoe_pretrained | style_vangogh_pretrained]`
 
-Use one of the values in the brackets to specify which pretrained transform you want to run. Add this before the `--no-dropout` flag and run the same command to test a new transform.
+Use one of the values in the brackets to specify which pretrained transform you want to run. Add this before the `--no_dropout` flag and run the same command to test a new transform.
 
 ---
 
