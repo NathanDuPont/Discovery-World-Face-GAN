@@ -64,10 +64,10 @@ bash ./scripts/download_cyclegan_model.sh style_cezanne
 bash ./scripts/download_cyclegan_model.sh style_ukiyoe
 bash ./scripts/download_cyclegan_model.sh style_vangogh
 
-bash ./datasets/download_cyclegan_dataset.sh style_monet
-bash ./datasets/download_cyclegan_dataset.sh style_cezanne
-bash ./datasets/download_cyclegan_dataset.sh style_ukiyoe
-bash ./datasets/download_cyclegan_dataset.sh style_vangogh
+bash ./datasets/download_cyclegan_dataset.sh monet2photo
+bash ./datasets/download_cyclegan_dataset.sh cezanne2photo
+bash ./datasets/download_cyclegan_dataset.sh ukiyoe2photo
+bash ./datasets/download_cyclegan_dataset.sh vangogh2photo
 ```
 
 Once downloaded, you should have everything to start testing the model.
