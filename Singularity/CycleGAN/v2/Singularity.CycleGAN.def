@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: continuumio/miniconda3
+# -----------------------------------------------------------------------------------
+
+%files
+# -----------------------------------------------------------------------------------
+    environment.yml
+
+%post
+# -----------------------------------------------------------------------------------
+# Install initial packages
+    /usr/local/anaconda3/condabin/conda env create -f environment.yml
+
+%runscript 
+# -----------------------------------------------------------------------------------
+# Activate the environment
+    exec /usr/local/anaconda3/condabin/conda activate cyclegan
