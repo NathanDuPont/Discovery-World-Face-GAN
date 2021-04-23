@@ -1,4 +1,5 @@
 import os
+import FaceDetector as fd
 from flask import Flask, render_template
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 from flask_wtf import FlaskForm
@@ -28,11 +29,16 @@ def upload_file():
     if form.validate_on_submit():
         filename = photos.save(form.photo.data)
         file_url = photos.url(filename)
-        # Pass file into Kiels/Nathans stuff
+    
+        # Get output file
         fname = filename.split(".")
-        out_fname = fname[0] + "_updated" + "." + fname[1]
-        out_url = str(file_url).replace(filename, out_fname)
-        print(out_url)
+        out_fname = fname[0] + "_updated"
+        out_fname_full = out_fname + "." + fname[1]
+        out_url = str(file_url).replace(filename, out_fname_full)
+
+        # Detect face
+        faceDetector = fd.FaceDetector('model/deploy.prototxt.txt', 'model/opencv_face_detector.caffemodel')
+        fd.export_image_to_file('uploads/' + out_fname, faceDetector.detect_face_from_image(filename))
     else:
         file_url = None
         out_url = None
